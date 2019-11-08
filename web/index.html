@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            font: bolder 26px ;
+
+        }
+
+        #result {
+            text-align: right;
+        }
+
+        table,
+        td {
+            border: 1px solid #C0C0C0;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="tb1">
+        <tr>
+            <td colspan="3" id="result">0</td>
+            <td><button type="button" value="C">C</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="1" onclick="showData(this);">1</button></td>
+            <td><button type="button" value="2">2</button></td>
+            <td><button type="button" value="3">3</button></td>
+            <td><button type="button" value="+">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="4">4</button></td>
+            <td><button type="button" value="5">5</button></td>
+            <td><button type="button" value="6">6</button></td>
+            <td><button type="button" value="-">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="7">7</button></td>
+            <td><button type="button" value="8">8</button></td>
+            <td><button type="button" value="9">9</button></td>
+            <td><button type="button" value="*">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" value="0">0</button></td>
+            <td><button type="button" value=".">.</button></td>
+            <td><button type="button" value="=">=</button></td>
+            <td><button type="button" value="/">/</button></td>
+        </tr>
+
+    </table>
+</body>
+<script>
+    var tb1=document.getElementById("tb1");
+    var  butList=document.getElementsByTagName("button");
+    for (let index = 0; index < butList.length; index++) {
+        butList[index].onclick=function(){
+            var cnt=this.parentNode.parentNode.parentNode.children[0].children;
+            var str=this.getAttribute("value")
+            document.getElementsByTagName(cnt).innerHTML=str;
+            console.log();
+        }
+    }
+</script>
+</html>
